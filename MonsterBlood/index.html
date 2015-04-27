@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Monster Blood</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
@@ -53,14 +53,14 @@
 		<div class="row row-spaced">
 			<div class="btn-toolbar">
 				<div class="btn-group">
-					<button class="btn btn-default" ng-click="monsters.pop()" ng-disabled="monsters.length == 0">Fewer</button>
-					<button class="btn btn-default" ng-click="addMonster()">More</button>
+					<button class="btn btn-lg btn-default" ng-click="monsters.pop()" ng-disabled="monsters.length == 0">Fewer</button>
+					<button class="btn btn-lg btn-default" ng-click="addMonster()">More</button>
 				</div>
 				<div class="btn-group">
-					<button class="btn btn-default" ng-click="editmax = !editmax">{{editmax ? 'Max HP' : 'Current HP'}}</button>
+					<button class="btn btn-lg btn-default" ng-click="editmax = !editmax">{{editmax ? 'Max HP' : 'Current HP'}}</button>
 				</div>
 				<div class="btn-group">
-					<button class="btn btn-default" ng-click="showhelp = !showhelp">{{showhelp ? 'Hide Help' : 'Help'}}</button>
+					<button class="btn btn-lg btn-default" ng-click="showhelp = !showhelp">{{showhelp ? 'Hide Help' : 'Help'}}</button>
 				</div>
 			</div>
 		</div>
@@ -77,13 +77,13 @@
 		<div class="row row-spaced" ng-repeat="monster in monsters">
 			<div class="btn-toolbar">
 				<div class="btn-group">
-					<button class="btn btn-default" ng-click="adjust(monster,-10)">-10</button>
-					<button class="btn btn-default" ng-click="adjust(monster,-5)">-5</button>
-					<button class="btn btn-default" ng-click="adjust(monster,-1)">-1</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,-10)">-10</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,-5)">-5</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,-1)">-1</button>
 				</div>
 				
 				<div class="btn-group">
-					<button class="btn" ng-class="editmax ? 'btn-warning' : 'btn-danger'"  ng-click="cycleStatus(monster)">
+					<button class="btn btn-lg" ng-class="editmax ? 'btn-warning' : 'btn-danger'"  ng-click="cycleStatus(monster)">
 						{{$index+1}}
 						<span class="glyphicon glyphicon-{{statuses[monster.status]}}"></span>
 						{{monster.current}} / {{monster.max}}
@@ -91,9 +91,9 @@
 				</div>
 				
 				<div class="btn-group">
-					<button class="btn btn-default" ng-click="adjust(monster,1)">+1</button>
-					<button class="btn btn-default" ng-click="adjust(monster,5)">+5</button>
-					<button class="btn btn-default" ng-click="adjust(monster,10)">+10</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,1)">+1</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,5)">+5</button>
+					<button class="btn btn-lg btn-default" ng-click="adjust(monster,10)">+10</button>
 				</div>
 			</div>
 		</div>
