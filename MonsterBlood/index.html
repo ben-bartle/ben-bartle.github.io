@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Health Tracker</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js"></script>
+</head>
+<body ng-init="healthValues=[10,10,10]">
+  <div>
+    <button ng-click="healthValues.pop()" ng-show="healthValues && healthValues.length > 0">Fewer</button>
+    <button  ng-click="healthValues.push(10)">More</button>
+  <div>
+
+  <div ng-repeat="health in healthValues track by $index">
+    <button ng-click="healthValues[$index] = healthValues[$index] - 10">-10</button>
+    <button ng-click="healthValues[$index] = healthValues[$index] - 5">-5</button>
+    <button ng-click="healthValues[$index] = healthValues[$index] - 1">-1</button>
+    <span>{{health}}</span> 
+    <button ng-click="healthValues[$index] = healthValues[$index] + 1">+1</button>
+    <button ng-click="healthValues[$index] = healthValues[$index] + 5">+5</button>
+    <button ng-click="healthValues[$index] = healthValues[$index] + 10">+10</button>
+  </div>
+</body>
+</html>
