@@ -22,7 +22,6 @@
 		  	localStorageServiceProvider.setPrefix('monster-blood');
 		}).controller('MonsterBloodCtrl', function ($scope, localStorageService) {
 			$scope.monsters = localStorageService.get('monsters') || [{current:10, max:10, status:0}];
-			console.log($scope.monsters);
 			$scope.add = true;
 			$scope.editmax = false;
 			$scope.statuses = ['heart','tint','fire'];
@@ -53,7 +52,7 @@
 				$scope.monsters.pop();
 
 				if ($scope.editableIndex >= $scope.monsters.length) {
-					setEditable($scope.monsters.length-1);
+					$scope.setEditable($scope.monsters.length-1);
 				}
 
 				localStorageService.set('monsters', $scope.monsters);
@@ -66,7 +65,9 @@
 			$scope.setEditable = function(monsterIndex) {
 				$scope.editableIndex = monsterIndex;
 				$scope.editable = $scope.monsters[monsterIndex];
-			}
+			};
+
+			$scope.setEditable(0);
 		});
 	</script>
 	<style>
